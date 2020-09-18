@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upload an image</h1>
+    <%= typeof msg !== 'undefined'? msg : '' %>
+    <form action="<%= pathname %>" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <br>
+        <input type="submit">
+    </form>
+    <% if(typeof msg !== 'undefined' && msg === 'file available for download') { %>
+        <form action="/download/<%= fileName %>" method="GET">
+            <button id="download">download</button>
+        </form>
+    <% } else { %>
+        
+    <% } %>
+
+</body>
+</html>
